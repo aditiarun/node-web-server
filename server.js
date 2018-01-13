@@ -34,12 +34,19 @@ app.get('/',(req, res) => {
   })
 });
 
+app.get('/profile', (req, res) => {
+  res.render('profile.hbs',{
+   pageTitle: 'Profile Page',
+   profileDesc: 'You can find the profile description of Crypto on this page'
+  })
+});
+
 app.get('/about', (req,res) => {
   res.render('about.hbs',{
     pageTitle: 'About Page',
     description: 'About Page Content'
     //currentYear: new Date().getFullYear()
-  });
+  })
 });
 app.use(express.static(__dirname + '/public'));
 app.get('/bad', (req,res) => {
